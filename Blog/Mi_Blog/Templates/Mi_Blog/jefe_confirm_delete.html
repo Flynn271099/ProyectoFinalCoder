@@ -1,0 +1,9 @@
+<form method="post"> {% csrf_token %}
+    <p>
+        ¿Estas seguro que deseas eliminar al jefe/a {{object}}?
+
+        Este se eliminará de forma permanente.
+    </p>
+
+    <input type="submit" value="Eliminar">
+</form>

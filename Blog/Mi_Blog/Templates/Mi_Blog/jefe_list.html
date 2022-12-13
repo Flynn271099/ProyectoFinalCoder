@@ -1,0 +1,34 @@
+{% extends 'Mi_Blog/index2.html' %}
+
+{% load static %}
+
+{% block  codigoDinamico%}
+
+{% for jefe in object_list %}
+
+    <ul>
+        <li>
+            {{jefe}}
+            <button>
+                <a href="{% url 'DetailJefe' jefe.id %}">Ver Detalles</a>
+            </button>
+            <button>
+                <a href="{% url 'DeleteJefe' jefe.id %}">Eliminar</a>
+            </button>
+            <button>
+                <a href="{% url 'UpdateJefe' jefe.id %}">Actualizar</a>
+            </button>
+        </li>
+    </ul>
+
+{% endfor %}
+
+<button>
+    <a href="{% url 'CreateJefe' %}">Crear nuevo registro</a>
+</button>
+
+<button>
+    <a href="{% url '/' %}">Volver al inicio</a>
+</button>
+
+{% endblock %}

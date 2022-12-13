@@ -1,0 +1,15 @@
+<form action="" method="post"> {% csrf_token %}
+    
+    <h3>Actualizar empleado:</h3>
+    <table>
+
+        {{formulario.as_table}}
+        
+    </table>
+    <button type="submit" value="Enviar">Enviar</button>
+
+</form>
+
+<button>
+    <a href="{% url '/' %}">Volver al inicio</a>
+</button>

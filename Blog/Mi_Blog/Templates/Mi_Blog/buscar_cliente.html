@@ -1,0 +1,35 @@
+{% extends 'Mi_Blog/index2.html' %}
+
+{% load static %}
+
+{% block codigoDinamico %}
+
+<h2>Para buscar su cliente, ingrese el email:</h2>
+
+<form action="" method="get">
+
+    <input type="text" name="email" id="email">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if clientes %}
+
+    <ul>
+    {% for Cliente in clientes %}
+        <li>El/La cliente/a {{Cliente.nombre}} {{Cliente.apellido}}, con correo: {{Cliente.email}} esta ingresado/a en el sistema.</li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    
+    <p>No hay datos.</p>
+
+    <button>
+        <a href="{% url '/' %}">Volver al inicio</a>
+    </button>
+
+{% endif %}
+
+{% endblock  %}

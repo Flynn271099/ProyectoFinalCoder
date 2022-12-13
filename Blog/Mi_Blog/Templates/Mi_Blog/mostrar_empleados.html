@@ -1,0 +1,15 @@
+{% for empleado in empleados %}
+    
+    <p>{{empleado}}</p>
+    <button>
+        
+        <a href="{% url 'Eliminar Empleado' empleado.email %}">Eliminar</a>
+
+    </button>
+    <button>
+
+        <a href="{% url 'Actualizar Empleado' empleado_id=empleado.id %}">Actualizar</a>
+
+    </button>
+
+{% endfor %}

@@ -1,0 +1,34 @@
+{% extends 'Mi_Blog/index2.html' %}
+
+{% load static %}
+
+{% block  codigoDinamico%}
+
+{% for empleado in object_list %}
+
+    <ul>
+        <li>
+            {{empleado}}
+            <button>
+                <a href="{% url 'Detail' empleado.id %}">Ver Detalles</a>
+            </button>
+            <button>
+                <a href="{% url 'Delete' empleado.id %}">Eliminar</a>
+            </button>
+            <button>
+                <a href="{% url 'Update' empleado.id %}">Actualizar</a>
+            </button>
+        </li>
+    </ul>
+
+{% endfor %}
+
+<button>
+    <a href="{% url 'Create' %}">Crear nuevo registro</a>
+</button>
+
+<button>
+    <a href="{% url '/' %}">Volver al inicio</a>
+</button>
+
+{% endblock %}
